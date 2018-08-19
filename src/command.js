@@ -1,5 +1,4 @@
-var child_process = require('child_process');
-var spawn = child_process.spawn;
+var spawn = require('child_process').spawn;
 var path = require('path');
 
 var vagrant = process.env.VAGRANT_DIR ? path.join(process.env.VAGRANT_DIR, 'vagrant') : 'vagrant';

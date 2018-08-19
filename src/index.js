@@ -14,7 +14,7 @@ module.exports.globalStatus = function (args, cb) {
     cb = cb || args;
 
     var command = Command.buildCommand('global-status', args);
-    module.exports._run(command, function (err, out) {
+    return module.exports._run(command, function (err, out) {
         if (err) {
             return cb(err);
         }
@@ -28,12 +28,12 @@ module.exports.create = function (opts) {
 };
 
 module.exports.version = function (cb) {
-    module.exports._run(Command.buildCommand('version'), cb);
+    return module.exports._run(Command.buildCommand('version'), cb);
 };
 
 module.exports.versionStatus = function (cb) {
     var command  = Command.buildCommand('--version');
-    module.exports._run(command, function (err, out) {
+    return module.exports._run(command, function (err, out) {
         if (err) {
             return cb(err);
         }
@@ -66,7 +66,7 @@ module.exports.boxList = function (args, cb) {
     cb = cb || args;
 
     var command = Command.buildCommand(['box', 'list'], args);
-    module.exports._run(command, function (err, out) {
+    return module.exports._run(command, function (err, out) {
         if (err) {
             return cb(err);
         }
@@ -78,14 +78,14 @@ module.exports.boxOutdated = function (args, cb) {
     cb = cb || args;
 
     var command = Command.buildCommand(['box', 'outdated', '--global'], args);
-    module.exports._run(command, cb);
+    return module.exports._run(command, cb);
 };
 
 module.exports.boxPrune = function (args, cb) {
     cb = cb || args;
 
     var command = Command.buildCommand(['box', 'prune', '-f'], args);
-    module.exports._run(command, cb);
+    return module.exports._run(command, cb);
 };
 
 module.exports.boxRemove = function (name, args, cb) {
@@ -96,7 +96,7 @@ module.exports.boxRemove = function (name, args, cb) {
     cb = cb || args;
 
     var command = Command.buildCommand(['box', 'remove', '-f'], args, name);
-    module.exports._run(command, cb);
+    return module.exports._run(command, cb);
 };
 
 module.exports.boxUpdate = function (box, provider, cb) {
