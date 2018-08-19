@@ -47,11 +47,12 @@
   "homepage": "https://github.com/edin-m/node-vagrant",
   "license": "ISC",
   "dependencies": {
-    "lodash": "3.3.0"
+    "lodash": "4.17.10"
   },
   "devDependencies": {
     "chai": "2.1.0",
-    "mocha": "2.2.1",
+    "mocha": "5.2.0",
+    "rewire": "4.0.1",
     "sinon": "3.2.0"
   }
 }
